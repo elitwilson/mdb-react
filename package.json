@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git+https://github.com/mdbootstrap/mdb-react-ui-kit.git"
   },
-  "homepage": "https://mdbootstrap.com/",
+  "homepage": "https://mdbootstrap.com/docs/b5/react/",
   "dependencies": {
     "clsx": "1.1.1",
     "react-popper": "2.2.4",
@@ -36,7 +36,6 @@
   ],
   "author": "MDBootstrap",
   "license": "SEE LICENSE IN <license.pdf>",
-  "homepage": "https://mdbootstrap.com/docs/b5/react/",
   "bugs": {
     "url": "https://github.com/mdbootstrap/mdb-react-ui-kit/issues"
   }
