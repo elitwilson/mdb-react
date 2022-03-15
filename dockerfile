@@ -12,19 +12,23 @@ RUN apk update && apk add bash
 
 # install app dependencies
 COPY package.json ./
-COPY package-lock.json ./
+# COPY package-lock.json ./
 RUN npm install
-RUN npm install react-scripts@3.4.1 -g --silent
-# RUN npm install -g webpack-dev-server -y
-# RUN npm install -g webpack-cli -y
-# RUN npm install -g webpack -y
+RUN npm install react-scripts@3.4.1 -g
+
 
 # add app
 COPY . ./
 
 # start app
 # CMD ["npm", "start"]
-# CMD webpack-dev-server --watch --config webpack.config.js --hot
+CMD ["/bin/bash"]
+ 
+# At this point, cd app and npm start
+# I have no idea why CMD ["npm", "start"] isn't working.
+# ToDO: Figure that out...
 
 # Spin up the container with
-# docker run --rm -it -v %cd%:/app sample:dev
+# docker run -it --rm -v %cd%:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true sample:dev
+
+# https://mherman.org/blog/dockerizing-a-react-app/
