@@ -1,21 +1,16 @@
-# pull official base image
 FROM node:13.12.0-alpine
 
-# set working directory
 WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
-# Install bash
+# Install bash for testing/experimenting purposes
 RUN apk update && apk add bash
 
-# install app dependencies
 COPY package.json ./
-# COPY package-lock.json ./
 RUN npm install
 RUN npm install react-scripts@3.4.1 -g
-
 
 # add app
 COPY . ./
@@ -29,6 +24,4 @@ CMD ["/bin/bash"]
 # ToDO: Figure that out...
 
 # Spin up the container with
-# docker run -ti --rm -p 8080:80 sample:dev
-
-# https://mherman.org/blog/dockerizing-a-react-app/
+# docker run -ti --rm -p 8080:8080 sample:dev
