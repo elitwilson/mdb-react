@@ -29,6 +29,6 @@ CMD ["/bin/bash"]
 # ToDO: Figure that out...
 
 # Spin up the container with
-# docker run -it --rm -v %cd%:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true sample:dev
+# docker run -ti --rm -p 8080:80 sample:dev
 
 # https://mherman.org/blog/dockerizing-a-react-app/
